@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" ng-app="inputdata">
+	<head>
+		<title>Belajar Angular</title>
+		<script type="text/javascript" src = "js/angular.js"></script>
+		<script type="text/javascript" src = "js/app.js"></script>
+	</head>
+	<body>
+		<h1>Hello Angular</h1>
+		<br />
+		<div ng-controller="formCtrl">
+		<form >
+			<table>
+				<tr>
+					<td>ID</td>
+					<td>:</td>
+					<td><input type="text" style="width:100%" ng-model="data.id"></td>
+				</tr>
+				<tr>
+					<td>Nama</td>
+					<td>:</td>
+					<td><input type="text" style="width:100%" ng-model="data.nama"></td>
+				</tr>
+				<tr>
+					<td>Alamat</td>
+					<td>:</td>
+					<td><input type="text" style="width:100%" ng-model="data.alamat"></td>
+				</tr>
+			</table>
+			
+			<button ng-click="save()">Save</button>
+			
+		</form>
+		
+		
+		
+		<table border="1px;">
+			<thead>
+				<th>ID</th>
+				<th>Nama</th>
+				<th>Alamat</th>
+				<th>Aksi</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="data in datas">
+					<td>{{data.id}}</td>
+					<td>{{data.nama}}</td>
+					<td>{{data.alamat}}</td>
+					<td><button ng-click="hapus(data)">hapus</button></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		</div>
+		
+	</body>
+	
+</html>
